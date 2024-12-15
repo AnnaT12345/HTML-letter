@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saybe Ice</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.5;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .header {
+            background-color: #111111;
+            text-align: center;
+            padding: 10px;
+        }
+        .header img {
+            max-width: 150px;
+        }
+        .banner img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+         .content {
+            padding: 200px;
+			text-align: center;
+            color: #FFFFFF;
+			background-image: url('Фон.jpg');
+			background-size: cover; 
+			background-position: center; 
+			background-repeat: no-repeat; 
+			
+        }
+		.content h2 {
+        margin: 10px 0; 
+        line-height: 1; 
+		}
+		
+		.content p {
+        margin: 3px 0; 
+        line-height: 1.2; 
+		}
+		
+        .button {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .button a {
+            text-decoration: none;
+            background-color: #111111;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .footer {
+            background-color: #111111;
+            text-align: center;
+            padding: 50px;
+            font-size: 14px;
+            color: #666;
+			background-image: url('Фон.jpg');
+			background-size: cover; /* Растягивает изображение, чтобы покрыть весь фон */
+			background-position: left; /* Центрирует изображение */
+			background-repeat: no-repeat; /* Избегает повторения изображения */
+        }
+        .footer a {
+            color: #FFFFFF;
+            text-decoration: none;
+        }
+        select {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            background-color: #f8f9fa;
+        }
+        .carousel {
+            display: none;
+            position: relative;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .carousel img {
+            max-width: 80%;
+            margin: 0 auto;
+            border-radius: 5px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .carousel-button.left {
+            left: 10px;
+        }
+        .carousel-button.right {
+            right: 10px;
+        }
+        .carousel-button:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        .carousel-button svg {
+            width: 20px;
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <!-- Header -->
+        <div class="header">
+            <img src="Лого.jpg" alt="Saybe Ice">
+        </div>
+
+        <!-- Banner -->
+        <div class="banner">
+            <img src="Банер.jpg" alt="Баннер">
+        </div>
+    
+        <!-- Content -->
+        <div class="content">
+            <h2>МЫ ДЕЛАЕМ УКРАШЕНИЯ — </h2>
+            <h2>ВЫ СОЗДАЕТЕ МОДУ</h2>
+            <p>Откройте для себя уникальные ювелирные украшения Saybe Ice.</p>
+            <p>Наша новогодняя распродажа стартует уже через час!</p>
+            <p>Вас ждут:</p>
+            <p>- Скидки до 30%!</p>
+            <p>- Подарок к каждому заказу!</p>
+        </div>
+
+        <!-- Button -->
+        <div class="button">
+            <p>Выберите категорию украшений:</p>
+            <select id="category-select">
+                <option value="">Выберите категорию</option>
+                <option value="rings">Кольца</option>
+                <option value="cases">Чехлы</option>
+                <option value="pendants">Кулоны</option>
+            </select>
+			
+        </div>
+
+        <!-- Carousel -->
+        <div class="carousel" id="carousel">
+            <button class="carousel-button left" id="prev-button">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6z"/></svg>
+            </button>
+            <img id="carousel-image" src="" alt="Изображение категории">
+            <button class="carousel-button right" id="next-button">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+            </button>
+			
+        </div>
+			<div class="button">
+            <a href="https://saybeice.ru/">Посмотреть коллекцию</a>
+        </div>
+        <!-- Footer -->
+        <div class="footer">
+            <p>
+                <a href="tel:+78005553535">Позвонить нам: +7 (800) 555-35-35</a><br>
+                <a href="mailto:info@saybeice.ru">Написать нам: info@saybeice.ru</a>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        const images = {
+            rings: ['кольцо1.jpg', 'кольцо2.jpg'],
+            cases: ['чехол1.jpg', 'чехол2.jpg'],
+            pendants: ['кулон1.jpg', 'кулон2.jpg']
+        };
+
+        const select = document.getElementById('category-select');
+        const carousel = document.getElementById('carousel');
+        const carouselImage = document.getElementById('carousel-image');
+        const prevButton = document.getElementById('prev-button');
+        const nextButton = document.getElementById('next-button');
+
+        let currentCategory = '';
+        let currentIndex = 0;
+
+        select.addEventListener('change', () => {
+            currentCategory = select.value;
+            if (currentCategory && images[currentCategory]) {
+                currentIndex = 0;
+                carouselImage.src = images[currentCategory][currentIndex];
+                carousel.style.display = 'flex';
+            } else {
+                carousel.style.display = 'none';
+            }
+        });
+
+        prevButton.addEventListener('click', () => {
+            if (currentCategory) {
+                currentIndex = (currentIndex - 1 + images[currentCategory].length) % images[currentCategory].length;
+                carouselImage.src = images[currentCategory][currentIndex];
+            }
+        });
+
+        nextButton.addEventListener('click', () => {
+            if (currentCategory) {
+                currentIndex = (currentIndex + 1) % images[currentCategory].length;
+                carouselImage.src = images[currentCategory][currentIndex];
+            }
+        });
+    </script>
+</body>
+</html>
